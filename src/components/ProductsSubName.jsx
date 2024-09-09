@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
-import ProductCardsWrapper from "./layout/ProductCardsWrapper";
 import './css/pagination.css'
+import ProductCardsWrapperSubName from "./layout/ProductCardsWrapperSubName";
 
-const Products = ({ productsData }) => {
+const ProductsSubName = ({ productsData }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const handlePageChange = ({ selected }) => {
@@ -16,7 +16,7 @@ const Products = ({ productsData }) => {
 
   return (
     <div className="flex flex-col gap-y-[64px]">
-      <ProductCardsWrapper
+      <ProductCardsWrapperSubName
         productsData={paginatedData}
         className="grid-cols-3 lg:gap-[10px] xl:gap-[16px]"
         productImageClassName="max-h-[399px]"
@@ -35,4 +35,4 @@ const Products = ({ productsData }) => {
   );
 };
 
-export default Products;
+export default ProductsSubName;

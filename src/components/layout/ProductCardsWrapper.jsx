@@ -1,7 +1,6 @@
 import React from "react";
 import ProductCard from "../ProductCard";
 
-
 const ProductCardsWrapper = ({
   productsData,
   className = "",
@@ -10,13 +9,14 @@ const ProductCardsWrapper = ({
   return (
     <div className={`${className} grid`}>
       {productsData?.map((d, i) => (
-        <ProductCard
-          image={d.image}
-          imageClassName={productImageClassName}
-          name={d.name}
-          color={d.color}
-          key={i}
-        />
+          <ProductCard
+            image={d.image}
+            imageClassName={productImageClassName}
+            subName={d.name}
+            name={d.name}
+            color={d.color}
+            key={i}
+          />
       ))}
     </div>
   );

@@ -3,15 +3,16 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "./layout/Button";
 
 
-const ProductCard = ({
+const ProductCardSubName = ({
   className = "",
   name,
   subName,
   image,
   imageClassName = "",
+  id
 }) => {
 
-  console.log(subName, "ini");
+  console.log(id);
   return (
     <div className={`relative flex flex-col flex-wrap gap-y-4 ${className}`}>
       
@@ -25,9 +26,9 @@ const ProductCard = ({
         />
       </div>
       <h3 className="text-center uppercase text-[3.4vw] sm:text-[2.3vw] md:text-[2.1vw] leading-[initial] lg:text-[18px] lg:leading-[26px]  xl:text-[22px] xl:leading-[28.44px] xxl:text-[24px] font-semibold text-gray_dark">
-        {name}
+        {name} {subName}
       </h3>
-      <Link to={`/polos/${subName}`}>
+      <Link to={`/polos/${name} ${subName}/${id}`}>
       <Button
         className="bg-gray_dark text-white"
       >
@@ -38,4 +39,4 @@ const ProductCard = ({
   );
 };
 
-export default ProductCard;
+export default ProductCardSubName;

@@ -7,7 +7,7 @@ import shopee from "../assets/icons/sosmed/icons8-shopee.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-black p-6 text-center">
+    <footer className="bg-[#C4C4BC] text-black p-6 text-center">
       <div className="container mx-auto">
         <h2 className="text-2xl font-bold mb-4">Judul Footer</h2>
         <p className="mb-6">
