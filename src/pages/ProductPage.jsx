@@ -11,6 +11,8 @@ const ProductPage = () => {
   const uniqueProducts = [];
   const seenNames = new Set();
 
+  console.log(uniqueProducts);
+
   const dispatch = useDispatch();
   const { products, status, error } = useSelector((state) => state.products);
 

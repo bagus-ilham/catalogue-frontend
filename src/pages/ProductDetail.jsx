@@ -9,11 +9,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../api/productSlice";
 import { useParams } from "react-router-dom";
 
+import tes1 from "../assets/products/Lovila1.png"
+import tes2 from "../assets/products/Maxel2.png"
+import tes3 from "../assets/products/Shinar Sonic.png"
+import tes4 from "../assets/products/Tierack Jacquard Bunga.png"
+
 const ProductDetail = () => {
-  let images = ["", "", "", ""];
+  let images = [tes1, tes2, tes3, tes4];
+  // let images = []
   const colorVarients = [];
   const uniqueProducts = [];
   const { id } = useParams();
+  // console.log(colorVarients);
 
   const dispatch = useDispatch();
   const { products, status, error } = useSelector((state) => state.products);
@@ -23,15 +30,13 @@ const ProductDetail = () => {
       data.Products.forEach((data2) => {
         if (data2.id == id) {
           uniqueProducts.push(data2);
-          images = data2.imgUrls
+          // images = data2.imgUrls
           data2.Colors.forEach((data3) => {
-            colorVarients.push(data3.name);
+            colorVarients.push(data3);
           });
         }
       });
     });
-
-  console.log(images);
 
   uniqueProducts.sort((a, b) => a.name.localeCompare(b.name));
 

@@ -42,13 +42,15 @@ const DetailView = ({
       <BlockWrapper>
         <BlockTitle>Color</BlockTitle>
         <div className="flex flex-wrap gap-2 items-center justify-start">
-          {colorVarients.map((c, i) => (
-            <ColorSelector
-              key={i}
-              color={c}
-              isSelected={colorVarients[i] === activeColor}
-              onClick={() => activeColor !== c && handleColorClick(c)}
-            />
+          {colorVarients.map((hex, i) => (
+            <>
+              <ColorSelector
+                key={i}
+                color={hex}
+                isSelected={colorVarients[i] === activeColor}
+                onClick={() => activeColor !== c && handleColorClick(c)}
+              />
+            </>
           ))}
         </div>
       </BlockWrapper>
